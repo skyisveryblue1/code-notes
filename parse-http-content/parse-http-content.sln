@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.34909.67
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "parse_http_content", "parse-http-content\parse_http_content.csproj", "{2039DDC9-98ED-4F99-ADB9-E0A18CCD6DAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2039DDC9-98ED-4F99-ADB9-E0A18CCD6DAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2039DDC9-98ED-4F99-ADB9-E0A18CCD6DAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2039DDC9-98ED-4F99-ADB9-E0A18CCD6DAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2039DDC9-98ED-4F99-ADB9-E0A18CCD6DAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64806B49-3660-41DF-BBFD-7D83592B8515}
+	EndGlobalSection
+EndGlobal
