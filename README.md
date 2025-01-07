@@ -14,3 +14,6 @@ in Windows' Task Scheduler is not displayed after logging in.
 
 4. parse-http-content
 - C# parser of http reponse stream for extracting images from it
+
+5. powershell-runner
+- C code to run multiple powershell script by powershell -Command
