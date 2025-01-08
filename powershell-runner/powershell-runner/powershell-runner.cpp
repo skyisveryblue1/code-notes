@@ -8,12 +8,6 @@
 std::string RunPowerShellScript(const char* script) {
     if (script == NULL) return "";
     std::string ret;
-    int len = strlen(script);
-    for (int i = 0; ((char*)script)[i] != '\0' && i < 5120; i++) {
-        if (script[i] == '"') {
-            ((char*)script)[i] = '\''; // Replace " with '
-        }
-    }
 
     // Create pipes for the child process's STDOUT and STDERR.
     HANDLE hReadPipe, hWritePipe;
@@ -127,6 +121,17 @@ std::string RunPowerShellScriptNew(const std::string script) {
     return result;
 }
 
+std::string replaceQuotes(const std::string& input) {
+    std::string result = input;
+    size_t pos = 0;
+
+    while ((pos = result.find('"', pos)) != std::string::npos) {
+        result.replace(pos, 1, "\\\"");
+        pos += 2; // Move past the newly inserted escaped quote
+    }
+
+    return result;
+}
 
 int main()
 {
@@ -146,8 +151,15 @@ int main()
         }
     )";
 
-    std::string r = RunPowerShellScriptNew(script);
-    std::string ret = RunPowerShellScript(script.c_str());
+    std::string script2 = R"(
+        $isWin11 = (Get-WmiObject Win32_OperatingSystem).Caption -Match "Windows 11"
+        echo $isWin11 
+    )";
+
+    std::string input = replaceQuotes(script);
+
+    std::string r = RunPowerShellScriptNew(input);
+    std::string ret = RunPowerShellScript(input.c_str());
 
     return 0;
 }
